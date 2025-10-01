@@ -1,8 +1,10 @@
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
-module.exports.createSecretToken = (id) => {
-    return jwt.sign({ id }, process.env.TOKEN_KEY, {
-        expiresIn: 3 * 24 * 60 * 60,
-    });
+// createSecretToken function with flexible expiry
+module.exports.createSecretToken = (id, expiresIn = "3d") => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn,
+    algorithm: "HS256", // explicitly set
+  });
 };

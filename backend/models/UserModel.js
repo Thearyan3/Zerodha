@@ -17,9 +17,16 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-userSchema.pre("save", async function () { 
+// Hash password only if modified
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
   this.password = await bcrypt.hash(this.password, 12);
+  next();
 });
 
+// Method to compare entered password with hashed one
+userSchema.methods.correctPassword = async function (candidatePassword, userPassword) {
+  return await bcrypt.compare(candidatePassword, userPassword);
+};
 
 module.exports = mongoose.model("User", userSchema);
