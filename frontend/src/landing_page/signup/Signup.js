@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import { FaUserCircle } from "react-icons/fa";
+import "./Signup.css";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -98,6 +100,9 @@ const Signup = () => {
         </span>
       </form>
       <ToastContainer />
+      <div className="logo-container">
+        <FaUserCircle size={80} color="#0380d1" />
+      </div>
     </div>
   );
 };
