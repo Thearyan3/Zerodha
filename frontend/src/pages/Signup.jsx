@@ -41,7 +41,8 @@ const Signup = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          navigate("/");
+          // redirect to dashboard app (replace URL if needed)
+          window.location.href = "http://localhost:3000";
         }, 1000);
       } else {
         handleError(message);
