@@ -26,6 +26,8 @@ module.exports.Signup = async (req, res) => {
     // set token cookie (minimal, stable options)
     res.cookie("token", token, {
       httpOnly: true,
+      secure: false, // set true in production (when using HTTPS)
+      sameSite: "lax", // allow frontend on different port in dev
       maxAge: 3 * 24 * 60 * 60 * 1000, // 3 days
     });
 
@@ -72,6 +74,8 @@ module.exports.Login = async (req, res) => {
     // set cookie (minimal)
     res.cookie("token", token, {
       httpOnly: true,
+      secure: false, // set true in production (when using HTTPS)
+      sameSite: "lax", // allow frontend on different port in dev
       maxAge: 3 * 24 * 60 * 60 * 1000, // 3 days
     });
 
