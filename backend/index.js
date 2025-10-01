@@ -22,8 +22,11 @@ app.use(cookieParser());
 
 // Setup CORS for frontend (adjust origin to your frontend URL)
 app.use(cors({
-    origin: "http://localhost:3000", // your React app URL
-    credentials: true, // allows sending cookies
+  origin: [
+    "http://localhost:3001", // frontend
+    "http://localhost:3000"  // dashboard
+  ],
+  credentials: true, // 👈 important to allow cookies
 }));
 
 // -------- Routes --------
