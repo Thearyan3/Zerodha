@@ -1,215 +1,140 @@
-/* * Signup.css - Highly professional, animated, glass-morphism styling.
- * This file strictly styles the Signup component (.form_container) and the page background.
- */
+/* Signup.css - Scoped to Signup.js only */
 
-/* 1. Global Page Setup (For Centering the Single Component) */
-html, body {
-    margin: 0;
-    padding: 0;
-    /* Use Inter for a clean, modern look */
-    font-family: 'Inter', sans-serif; 
-    height: 100vh; /* Make sure the body fills the entire viewport */
-    overflow-x: hidden; /* Prevent horizontal scroll on resize/bounce effects */
-}
-
-body {
-    display: flex;
-    justify-content: center; /* Center form horizontally */
-    align-items: center; /* Center form vertically */
-    background: linear-gradient(135deg, #0380d1, #03a9f4); /* Bright blue gradient background */
-    transition: background 0.5s ease;
-}
-
-/* 2. Entrance Animation */
-@keyframes formAppear {
-    0% {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* 3. Form Container (Glass Morphism) */
 .form_container {
-    position: relative;
-    z-index: 10;
-    
-    /* Glass-morphism effect */
-    background: rgba(255, 255, 255, 0.15); 
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    
-    border-radius: 1.5rem; 
-    border: 1px solid rgba(255, 255, 255, 0.4); /* Clearer frosted border */
-    padding: 3rem 2.5rem 3rem;
-    width: 100%;
-    max-width: 400px;
-    margin: 2rem; /* Add margin for mobile safety */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    /* Stronger, professional shadow */
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35); 
-    
-    animation: formAppear 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  position: relative;
+  background-color: #fff;
+  padding: 3rem 2.5rem 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* 4. Logo Icon Positioning */
-.logo-container {
-    position: absolute;
-    top: -45px; /* Pull the logo out and above the form */
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1rem;
-    border-radius: 50%;
-    /* Highlighted circle effect */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2), inset 0 0 12px rgba(255, 255, 255, 0.8); 
-    transition: all 0.4s ease-in-out;
-}
-
-.logo-container svg {
-    color: #03a9f4; /* Primary brand color */
-    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
-}
-
-/* Form Heading */
 .form_container h2 {
-    color: #fff;
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-    font-size: 2.2rem;
-    font-weight: 700;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-    letter-spacing: 0.5px;
+  color: #0380d1;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
-/* Form Structure */
 .form_container form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
 }
 
-/* Input Wrapper for Floating Labels */
 .form_container div {
-    position: relative;
-    display: flex;
-    flex-direction: column-reverse;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
-/* 5. Inputs and Labels */
 .form_container input {
-    border: none;
-    border-radius: 0.8rem;
-    padding: 1.1rem; 
-    font-size: 1rem;
-    outline: none;
-    
-    background: rgba(255, 255, 255, 0.25);
-    color: #fff;
-    caret-color: #fff; /* White cursor */
-    transition: all 0.3s ease;
-    border: 1px solid transparent; 
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
 .form_container input:focus {
-    background: rgba(255, 255, 255, 0.45); /* Brighter on focus */
-    border: 1px solid #00c3ff; 
-    box-shadow: 0 0 15px rgba(3, 169, 244, 0.8); /* Stronger neon glow */
-    transform: scale(1.01); 
-}
-
-/* Hide placeholder text */
-.form_container input::placeholder {
-    color: transparent;
+  border-color: #0380d1;
+  box-shadow: 0 0 5px rgba(3, 128, 209, 0.4);
 }
 
 .form_container label {
-    position: absolute;
-    left: 1.1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ddd;
-    font-size: 1rem;
-    pointer-events: none;
-    padding: 0 0.25rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth Material-like transition */
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  padding: 0 0.25rem;
+  color: #777;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
-/* Float label on focus or filled input */
 .form_container input:focus + label,
-.form_container input:not(:placeholder-shown):valid + label,
-.form_container input:not(:placeholder-shown):not(:focus) + label {
-    top: -1.2rem; 
-    left: 0.5rem;
-    font-size: 0.85rem;
-    color: #00c3ff; 
-    font-weight: 600;
-    background-color: transparent;
+.form_container input:not(:placeholder-shown) + label {
+  top: -0.6rem;
+  font-size: 0.8rem;
+  color: #0380d1;
 }
 
-/* 6. Button Styling */
 .form_container button {
-    background: linear-gradient(90deg, #00c3ff, #0380d1);
-    color: #fff;
-    border: none;
-    padding: 1.1rem;
-    font-size: 1.15rem;
-    font-weight: 700;
-    border-radius: 0.8rem;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 6px 18px rgba(3, 128, 209, 0.5);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  background-color: #0380d1;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .form_container button:hover {
-    transform: translateY(-4px); /* Lift button on hover */
-    box-shadow: 0 12px 25px rgba(3, 128, 209, 0.8);
+  background-color: #0262a3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(3, 128, 209, 0.3);
 }
 
-/* 7. Footer/Login Span */
 .form_container span {
-    display: block;
-    text-align: center;
-    margin-top: 1.8rem;
-    font-size: 0.95rem;
-    color: #fff;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 .form_container span a {
-    color: #00c3ff;
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.2s;
+  color: #0380d1;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .form_container span a:hover {
-    color: #fff;
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-/* 8. Responsive Adjustments */
+/* User icon styling */
+.logo-container {
+  margin-top: -4rem;
+  margin-bottom: 1rem;
+}
+
+.logo-container svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo-container svg:hover {
+  transform: scale(1.1);
+  color: #0262a3;
+}
+
+/* Floating placeholder trick: hide placeholder text but still trigger :placeholder-shown */
+.form_container input::placeholder {
+  color: transparent;
+}
+
+/* Responsive */
 @media only screen and (max-width: 500px) {
-    .form_container {
-        padding: 2rem 1.25rem 2.5rem;
-        margin: 1rem;
-        max-width: 95%;
-    }
-    .form_container h2 {
-        font-size: 1.8rem;
-    }
-    .form_container input {
-        padding: 1rem;
-    }
-    .form_container button {
-        padding: 0.9rem;
-        font-size: 1.05rem;
-    }
+  .form_container {
+    padding: 2rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+
+  .form_container h2 {
+    font-size: 1.6rem;
+  }
+
+  .form_container button {
+    font-size: 1rem;
+  }
 }
