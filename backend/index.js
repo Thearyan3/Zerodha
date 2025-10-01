@@ -2,7 +2,6 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const app = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const authRoute = require("./Routes/AuthRoute");
@@ -14,13 +13,23 @@ const { OrdersModel } = require("./models/OrdersModel");
 const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
 
-app.use(cors());
+const app = express();
+
+// -------- Middleware --------
+app.use(express.json()); // parses JSON bodies
+app.use(express.urlencoded({ extended: true })); // parses form data
 app.use(cookieParser());
-app.use(express.json());// replaces body-parser.json()
-app.use("/", authRoute);
-app.use(express.urlencoded({ extended: true })); // handles form data
 
+// Setup CORS for frontend (adjust origin to your frontend URL)
+app.use(cors({
+    origin: "http://localhost:3000", // your React app URL
+    credentials: true, // allows sending cookies
+}));
 
+// -------- Routes --------
+app.use("/api/auth", authRoute); // all auth routes prefixed with /api/auth
+
+// Example routes for holdings, positions, orders
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
   res.json(allHoldings);
@@ -34,17 +43,20 @@ app.get("/allPositions", async (req, res) => {
 app.post("/newOrder", async (req, res) => {
   let newOrder = new OrdersModel({
     name: req.body.name,
-  qty: req.body.qty,
-  price: req.body.price,
-  mode: req.body.mode,
+    qty: req.body.qty,
+    price: req.body.price,
+    mode: req.body.mode,
   });
 
-  newOrder.save();
-  res.send("Orders saved!");
+  await newOrder.save();
+  res.send("Order saved!");
 });
 
+// -------- Start Server & Connect DB --------
+mongoose.connect(uri)
+  .then(() => console.log("DB connected!"))
+  .catch(err => console.error("DB connection error:", err));
+
 app.listen(PORT, () => {
-  console.log("App Started");
-  mongoose.connect(uri);
-  console.log("DB connected!");
+  console.log(`App running on PORT ${PORT}`);
 });
