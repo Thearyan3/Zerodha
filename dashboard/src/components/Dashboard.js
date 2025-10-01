@@ -16,6 +16,18 @@ const Dashboard = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const navigate = useNavigate();
 
+  const isDev = window.location.hostname === "localhost";
+
+useEffect(() => {
+  if (isDev) {
+    setAuthenticated(true); // skip token check in dev
+    setLoading(false);
+    return;
+  }
+
+  // normal token verification code here...
+}, []);
+
   useEffect(() => {
     axios
       .get("http://localhost:3002/api/auth/verify", { withCredentials: true })
