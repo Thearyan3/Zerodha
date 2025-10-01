@@ -1,26 +1,57 @@
-/* Signup.css - Scoped to Signup.js only */
+/* Signup.css - Ultra-modern, professional, fully animated */
 
+/* Page background */
+body {
+  margin: 0;
+  font-family: 'Verdana', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0380d1, #03a9f4);
+}
+
+/* Fade-in and slide-up animation for form */
+@keyframes formAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form container */
 .form_container {
   position: relative;
-  background-color: #fff;
-  padding: 3rem 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 3rem 2.5rem 2rem;
   width: 100%;
   max-width: 420px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   margin: 4rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  animation: formAppear 0.8s ease forwards;
 }
 
+/* Form heading */
 .form_container h2 {
-  color: #0380d1;
+  color: #fff;
   margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: 600;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
+/* Form structure */
 .form_container form {
   width: 100%;
   display: flex;
@@ -28,73 +59,89 @@
   gap: 1.8rem;
 }
 
+/* Floating input wrapper */
 .form_container div {
   position: relative;
   display: flex;
   flex-direction: column-reverse;
 }
 
+/* Inputs */
 .form_container input {
-  border: 2px solid #ccc;
-  border-radius: 0.5rem;
-  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 1rem;
   font-size: 1rem;
   outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
   transition: all 0.3s ease;
 }
 
+/* Input focus glow + subtle bounce */
 .form_container input:focus {
-  border-color: #0380d1;
-  box-shadow: 0 0 5px rgba(3, 128, 209, 0.4);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 12px rgba(3, 128, 209, 0.6);
+  transform: scale(1.02);
 }
 
+/* Labels for floating effect */
 .form_container label {
   position: absolute;
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #fff;
-  padding: 0 0.25rem;
-  color: #777;
+  color: #ddd;
   font-size: 1rem;
   pointer-events: none;
+  background-color: transparent;
+  padding: 0 0.25rem;
   transition: all 0.3s ease;
 }
 
+/* Float label on focus or filled input */
 .form_container input:focus + label,
 .form_container input:not(:placeholder-shown) + label {
   top: -0.6rem;
   font-size: 0.8rem;
-  color: #0380d1;
+  color: #03a9f4;
 }
 
+/* Hide placeholder text */
+.form_container input::placeholder {
+  color: transparent;
+}
+
+/* Button styling */
 .form_container button {
-  background-color: #0380d1;
+  background: linear-gradient(90deg, #03a9f4, #0380d1);
   color: #fff;
   border: none;
-  padding: 0.8rem;
+  padding: 0.9rem;
   font-size: 1.1rem;
   font-weight: 500;
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(3, 128, 209, 0.3);
 }
 
 .form_container button:hover {
-  background-color: #0262a3;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(3, 128, 209, 0.3);
+  box-shadow: 0 8px 18px rgba(3, 128, 209, 0.5);
 }
 
+/* Login span */
 .form_container span {
   display: block;
   text-align: center;
   margin-top: 1rem;
   font-size: 0.9rem;
+  color: #eee;
 }
 
 .form_container span a {
-  color: #0380d1;
+  color: #03a9f4;
   text-decoration: none;
   font-weight: 500;
 }
@@ -103,24 +150,25 @@
   text-decoration: underline;
 }
 
-/* User icon styling */
+/* Logo container with animation */
 .logo-container {
-  margin-top: -4rem;
+  margin-top: -5rem;
   margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
 }
 
 .logo-container svg {
   transition: transform 0.3s ease, color 0.3s ease;
+  color: #03a9f4;
 }
 
 .logo-container svg:hover {
-  transform: scale(1.1);
-  color: #0262a3;
-}
-
-/* Floating placeholder trick: hide placeholder text but still trigger :placeholder-shown */
-.form_container input::placeholder {
-  color: transparent;
+  transform: scale(1.2) rotate(-5deg);
+  color: #00bfff;
 }
 
 /* Responsive */

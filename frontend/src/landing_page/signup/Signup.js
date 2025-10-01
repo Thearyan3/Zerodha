@@ -62,6 +62,9 @@ const Signup = () => {
 
   return (
     <div className="form_container">
+      <div className="logo-container">
+        <FaUserCircle size={80} color="#0380d1" />
+      </div>
       <h2>Signup Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -100,9 +103,6 @@ const Signup = () => {
         </span>
       </form>
       <ToastContainer />
-      <div className="logo-container">
-        <FaUserCircle size={80} color="#0380d1" />
-      </div>
     </div>
   );
 };
