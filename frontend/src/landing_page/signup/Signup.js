@@ -39,7 +39,7 @@ const Signup = () => {
         { withCredentials: true }
       );
 
-console.log("Signup API response:", data); // 🔍 Debug response
+      console.log("Signup API response:", data); // 🔍 Debug response
 
       const { success, message } = data;
       if (success) {
@@ -103,7 +103,7 @@ console.log("Signup API response:", data); // 🔍 Debug response
         </div>
         <button type="submit">Submit</button>
         <span>
-          Already have an account? <Link to={"/Signup"}>Login</Link>
+          Already have an account? <Link to="/login">Login</Link>
         </span>
       </form>
       <ToastContainer />
