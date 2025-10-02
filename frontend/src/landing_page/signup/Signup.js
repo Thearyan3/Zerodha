@@ -31,38 +31,36 @@ const Signup = () => {
     });
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const { data } = await axios.post(
-        "http://localhost:3002/api/auth/signup",
-        { ...inputValue },
-        { withCredentials: true }
-      );
+  e.preventDefault();
+  try {
+    const { data } = await axios.post(
+      "http://localhost:3002/api/auth/signup", // must match backend
+      { ...inputValue },
+      { withCredentials: true } // important for cookies
+    );
 
-      console.log("Signup API response:", data); // 🔍 Debug response
+    console.log("Signup API response:", data); // 🔍 Debug
 
-      const { success, message } = data;
-      if (success) {
-        handleSuccess(message);
-        console.log("✅ Redirecting to dashboard...");
-        setTimeout(() => {
-          // redirect to dashboard app (replace URL if needed)
-          window.location.href = "http://localhost:3000";
-        }, 1000);
-      } else {
-        console.warn("⚠️ Signup failed:", message);
-        handleError(message);
-      }
-    } catch (error) {
-      console.error("❌ API error:", error.response || error.message);
+    const { success, message } = data;
+    if (success) {
+      toast.success(message, { position: "bottom-right" });
+
+      // ✅ Redirect to dashboard after 1s
+      setTimeout(() => {
+        window.location.href = "http://localhost:3000"; // dashboard app
+      }, 1000);
+    } else {
+      toast.error(message, { position: "bottom-left" });
     }
-    setInputValue({
-      ...inputValue,
-      email: "",
-      password: "",
-      username: "",
-    });
-  };
+  } catch (error) {
+    console.error("API error:", error.response || error.message);
+    toast.error("Failed to connect to backend!", { position: "bottom-left" });
+  }
+
+  // Clear input
+  setInputValue({ email: "", password: "", username: "" });
+};
+
 
   return (
     <div className="form_container">
