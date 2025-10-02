@@ -16,18 +16,22 @@ const uri = process.env.MONGO_URL;
 const app = express();
 
 // -------- Middleware --------
-app.use(express.json()); // parses JSON bodies
-app.use(express.urlencoded({ extended: true })); // parses form data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Setup CORS for frontend (adjust origin to your frontend URL)
-app.use(cors({
+// ✅ Proper CORS setup
+const corsOptions = {
   origin: [
     "http://localhost:3001", // frontend
-    "http://localhost:3000"  // dashboard
+    "http://localhost:3000", // dashboard
   ],
-  credentials: true, // 👈 important to allow cookies
-}));
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 // -------- Routes --------
 app.use("/api/auth", authRoute); // all auth routes prefixed with /api/auth
