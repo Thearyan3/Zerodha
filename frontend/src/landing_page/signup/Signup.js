@@ -39,18 +39,22 @@ const Signup = () => {
         { withCredentials: true }
       );
 
+console.log("Signup API response:", data); // 🔍 Debug response
+
       const { success, message } = data;
       if (success) {
         handleSuccess(message);
+        console.log("✅ Redirecting to dashboard...");
         setTimeout(() => {
           // redirect to dashboard app (replace URL if needed)
           window.location.href = "http://localhost:3000";
         }, 1000);
       } else {
+        console.warn("⚠️ Signup failed:", message);
         handleError(message);
       }
     } catch (error) {
-      console.log(error);
+      console.error("❌ API error:", error.response || error.message);
     }
     setInputValue({
       ...inputValue,
