@@ -15,24 +15,36 @@ import NotFound from "./landing_page/NotFound";
 import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 
+import Home from "./dashboard/components/Home";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Navbar />
       <Routes>
         {/* Landing site routes */}
-        <Route path='/' element={<HomePage />} />
-        <Route path='/signup' element={<SignupPage />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/products' element={<ProductsPage />} />
-        <Route path='/pricing' element={<PricingPage />} />
-        <Route path='/support' element={<SupportPage />} />
+        <Route
+          path="/*"
+          element={
+            <>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/products" element={<ProductsPage />} />
+                <Route path="/pricing" element={<PricingPage />} />
+                <Route path="/support" element={<SupportPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <Footer />
+            </>
+          }
+        />
 
-        {/* Catch-all */}
-        <Route path='*' element={<NotFound />} />
+        {/* Dashboard routes */}
+      <Route path="/dashboard/*" element={<Home />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );
