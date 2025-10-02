@@ -34,7 +34,7 @@ const Signup = () => {
   e.preventDefault();
   try {
     const { data } = await axios.post(
-      "http://localhost:3002/api/auth/signup", // must match backend
+      "http://localhost:3002/signup", // must match backend
       { ...inputValue },
       { withCredentials: true } // important for cookies
     );
@@ -53,8 +53,7 @@ const Signup = () => {
       toast.error(message, { position: "bottom-left" });
     }
   } catch (error) {
-    console.error("API error:", error.response || error.message);
-    toast.error("Failed to connect to backend!", { position: "bottom-left" });
+    console.error(error);
   }
 
   // Clear input
