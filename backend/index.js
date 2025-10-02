@@ -34,7 +34,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // -------- Routes --------
-app.use("/", authRoute); // all auth routes prefixed with /api/auth
+app.use("/api/auth", authRoute); // all auth routes prefixed with /api/auth
 
 // Example routes for holdings, positions, orders
 app.get("/allHoldings", async (req, res) => {

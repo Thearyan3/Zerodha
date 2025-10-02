@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { FaUserCircle } from "react-icons/fa";
 import "./Signup.css";
 
 const Signup = () => {
-  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
     username: "",
   });
+
   const { email, password, username } = inputValue;
+
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setInputValue({
@@ -22,44 +23,56 @@ const Signup = () => {
   };
 
   const handleError = (err) =>
-    toast.error(err, {
-      position: "bottom-left",
-    });
+    toast.error(err, { position: "bottom-left" });
   const handleSuccess = (msg) =>
-    toast.success(msg, {
-      position: "bottom-right",
-    });
+    toast.success(msg, { position: "bottom-right" });
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const { data } = await axios.post(
-      "http://localhost:3002/signup", // must match backend
-      { ...inputValue },
-      { withCredentials: true } // important for cookies
-    );
+    e.preventDefault();
 
-    console.log("Signup API response:", data); // 🔍 Debug
+    // 🔍 Debug: log payload before sending
+    console.log("Signup payload:", inputValue);
 
-    const { success, message } = data;
-    if (success) {
-      toast.success(message, { position: "bottom-right" });
-
-      // ✅ Redirect to dashboard after 1s
-      setTimeout(() => {
-        window.location.href = "http://localhost:3000"; // dashboard app
-      }, 1000);
-    } else {
-      toast.error(message, { position: "bottom-left" });
+    // Quick frontend validation
+    if (!email || !username || !password) {
+      handleError("Please fill in all fields!");
+      return;
     }
-  } catch (error) {
-    console.error(error);
-  }
 
-  // Clear input
-  setInputValue({ email: "", password: "", username: "" });
-};
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3002/api/auth/signup",
+        { email, username, password },
+        { withCredentials: true }
+      );
 
+      console.log("Signup API response:", data);
+
+      const { success, message } = data;
+      if (success) {
+        handleSuccess(message);
+        console.log("✅ Redirecting to dashboard...");
+        setTimeout(() => {
+          window.location.href = "http://localhost:3000"; // dashboard
+        }, 1000);
+      } else {
+        handleError(message);
+      }
+    } catch (error) {
+      console.error(
+        "❌ API error:",
+        error.response?.data || error.message
+      );
+      handleError(error.response?.data?.message || error.message);
+    }
+
+    // Reset form
+    setInputValue({
+      email: "",
+      password: "",
+      username: "",
+    });
+  };
 
   return (
     <div className="form_container">
@@ -100,7 +113,7 @@ const Signup = () => {
         </div>
         <button type="submit">Submit</button>
         <span>
-          Already have an account? <Link to="/login">Login</Link>
+          Already have an account? <Link to={"/Signup"}>Login</Link>
         </span>
       </form>
       <ToastContainer />
