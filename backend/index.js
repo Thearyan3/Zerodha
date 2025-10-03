@@ -22,7 +22,10 @@ app.use(cookieParser());
 
 // ✅ Proper CORS setup
 const corsOptions = {
-  origin: "http://localhost:3000", // dashboard,
+  origin: [
+    "http://localhost:3001", // frontend
+    "http://localhost:3000", // dashboard
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
