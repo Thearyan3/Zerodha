@@ -38,11 +38,11 @@ useEffect(() => {
           setAuthenticated(true);
         } else {
           // redirect to frontend signup page
-          window.location.href = "http://localhost:3001/signup";
+          window.location.href = "https://zerodha-frontend-dm96.onrender.com/signup";
         }
       })
       .catch(() => {
-        window.location.href = "http://localhost:3001/signup";
+        window.location.href = "https://zerodha-frontend-dm96.onrender.com/signup";
       })
       .finally(() => setLoading(false));
   }, []);
