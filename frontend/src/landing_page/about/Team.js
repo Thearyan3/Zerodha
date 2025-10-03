@@ -21,23 +21,22 @@ function Team() {
             }}
           />
           <h4 className="mt-5">Aryan</h4>
-          <h6>Web Developer</h6>
+          <h6>Full Stack Developer</h6>
         </div>
         <div className="col-6 pt-4" style={{fontSize: "1.1em", lineHeight: "1.5"}}>
           <p>
-            Nithin bootstrapped and founded Zerodha in 2010 to overcome the<br/>
-            hurdles he faced during his decade long stint as a trader. Today,<br/>
-            Zerodha has changed the landscape of the Indian broking industry.<br/>
+            As a Web Developer, Aryan is passionate about building full-stack applications<br /> that solve real-world problems. Currently studying BCA, he specializes in<br />
+            the MERN stack and has built several notable projects, including a Zerodha <br />
+            clone and a Wanderlust property platform.
           </p>
 
           <p>
-            He is a member of the SEBI Secondary Market Advisory Committee<br/>
-            (SMAC) and the Market Data Advisory Committee (MDAC).<br/>
+            He is always eager to learn and grow, currently diving into the world<br/> of Generative AI.
           </p>
 
-          <p>Playing basketball is his zen.</p>
+          <p>Outside of coding, you might find him on the football field as a <br/>National Football Player, traveling, or listening to music.</p>
 
-          <p>Connect on <a href="" style={{textDecoration: "none"}}>Homepage</a> / <a href="" style={{textDecoration: "none"}}>TradingQnA</a> / <a href="" style={{textDecoration: "none"}}>Twitter</a></p>
+          <p>Connect on <a href="" style={{textDecoration: "none"}}>Homepage</a> / <a href="" style={{textDecoration: "none"}}>GitHub</a> / <a href="" style={{textDecoration: "none"}}>LinkedIn</a></p>
           </div>
         <div className="col-1"></div>    
       </div>
