@@ -1,10 +1,10 @@
-/* dashboard.css — Scoped under .dashboard
+/* dashboard.css — Scoped under .dashboard-root
    Place file at: frontend/src/dashboard/dashboard.css
-   Wrap dashboard root in: <div className="dashboard"> ... </div>
+   Wrap dashboard root in: <div className="dashboard-root"> ... </div>
 */
 
 /* base / body & code (scoped) */
-.dashboard {
+.dashboard-root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -12,13 +12,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.dashboard code {
+.dashboard-root code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 /* layout */
-.dashboard .dashboard-container {
+.dashboard-root .dashboard-container {
   width: 100%;
   height: 90vh;
   display: flex;
@@ -26,7 +26,7 @@
   box-sizing: border-box;
 }
 
-.dashboard .content {
+.dashboard-root .content {
   flex-basis: 68%;
   height: 100%;
   box-sizing: border-box;
@@ -35,21 +35,21 @@
 }
 
 /* funds */
-.dashboard .funds {
+.dashboard-root .funds {
   width: 100%;
   text-align: right;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-.dashboard .funds p {
+.dashboard-root .funds p {
   font-size: 0.8rem;
   color: rgb(179, 179, 179);
   margin-right: 8px;
 }
 
 /* buttons */
-.dashboard .btn {
+.dashboard-root .btn {
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 2px;
@@ -57,21 +57,21 @@
   margin-right: 2px;
   margin-left: 2px;
 }
-.dashboard .btn-green {
+.dashboard-root .btn-green {
   background: #4caf50;
 }
-.dashboard .btn-blue {
+.dashboard-root .btn-blue {
   background: #4184f3;
 }
-.dashboard .btn-blue:hover {
+.dashboard-root .btn-blue:hover {
   background: #74a7fa;
 }
-.dashboard .btn-green:hover {
+.dashboard-root .btn-green:hover {
   background: #7bdd7f;
 }
 
 /* rows and cols (first variant) */
-.dashboard .row {
+.dashboard-root .row {
   width: 100%;
   display: flex;
   align-items: center;
@@ -79,18 +79,18 @@
   margin-top: 5%;
 }
 
-.dashboard .col {
+.dashboard-root .col {
   flex-basis: 48%;
   text-align: left;
 }
 
-.dashboard .col span {
+.dashboard-root .col span {
   display: flex;
   align-items: center;
   margin-bottom: 2%;
 }
 
-.dashboard .section-icon {
+.dashboard-root .section-icon {
   transform: scale(0.8);
   color: rgb(66, 56, 56);
   padding: 0;
@@ -98,54 +98,54 @@
   margin-right: 10px;
 }
 
-.dashboard .col span p {
+.dashboard-root .col span p {
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 300;
 }
 
 /* table styles */
-.dashboard .table {
+.dashboard-root .table {
   border: 1px solid #ddd;
   padding: 5% 8%;
 }
-.dashboard .table .data {
+.dashboard-root .table .data {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.dashboard .table .data > * {
+.dashboard-root .table .data > * {
   margin-bottom: 5%;
 }
-.dashboard .table .data p:first-child {
+.dashboard-root .table .data p:first-child {
   font-size: 1rem;
   color: rgb(151, 151, 151);
 }
-.dashboard .imp {
+.dashboard-root .imp {
   font-size: 1.5rem;
   color: #313131;
 }
-.dashboard .colored {
+.dashboard-root .colored {
   color: #4184f3;
 }
-.dashboard .table hr {
+.dashboard-root .table hr {
   border: none;
   background: #d1d1d1;
   height: 0.5px;
   margin-bottom: 5%;
 }
 
-.dashboard .commodity {
+.dashboard-root .commodity {
   padding: 2% 8%;
   text-align: center;
 }
-.dashboard .commodity p {
+.dashboard-root .commodity p {
   margin-bottom: 10%;
   color: #c9c9c9;
 }
 
 /* title */
-.dashboard .title {
+.dashboard-root .title {
   font-size: 1.3rem;
   font-weight: 300;
   color: rgb(71, 71, 71);
@@ -153,89 +153,95 @@
 }
 
 /* order-table */
-.dashboard .order-table table {
+.dashboard-root .order-table table {
   width: 100%;
   border-collapse: collapse;
 }
-.dashboard .order-table tr {
+.dashboard-root .order-table tr {
   border-top: 1px solid #f1f1f1;
   border-bottom: 1px solid #f1f1f1;
 }
-.dashboard .order-table th {
+.dashboard-root .order-table th {
   text-align: right;
   padding: 15px 10px;
   color: rgb(145, 145, 145);
   font-weight: 300;
   font-size: 0.8rem;
 }
-.dashboard .order-table tr th:first-child,
-.dashboard .order-table tr td:first-child {
+.dashboard-root .order-table tr th:first-child,
+.dashboard-root .order-table tr td:first-child {
   text-align: left;
 }
-.dashboard .order-table tr th:nth-child(1),
-.dashboard .order-table tr th:nth-child(4) {
+.dashboard-root .order-table tr th:nth-child(1),
+.dashboard-root .order-table tr th:nth-child(4) {
   border-right: 1px solid #f1f1f1;
 }
-.dashboard .order-table tr td:nth-child(1),
-.dashboard .order-table tr td:nth-child(4) {
+.dashboard-root .order-table tr td:nth-child(1),
+.dashboard-root .order-table tr td:nth-child(4) {
   border-right: 1px solid #f1f1f1;
 }
-.dashboard .order-table tr td:last-child {
+.dashboard-root .order-table tr td:last-child {
   font-size: 0.6rem;
 }
-.dashboard .order-table td {
+.dashboard-root .order-table td {
   padding: 10px 10px;
   text-align: right;
   font-weight: 400;
   font-size: 0.9rem;
   color: rgb(73, 73, 73);
 }
-.dashboard .align-left {
+.dashboard-root .align-left {
   text-align: left;
 }
-.dashboard .order-table td.profit {
+.dashboard-root .order-table td.profit {
   color: rgb(72, 194, 55);
 }
-.dashboard .order-table td.loss {
+.dashboard-root .order-table td.loss {
   color: rgb(250, 118, 78);
 }
 
-/* row/col variant (repeated in original; preserve behavior) */
-.dashboard .row {
+/* === Dashboard Block 2 (Scoped & Refined) === */
+
+.dashboard-root .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 5%;
 }
-.dashboard .col {
+
+.dashboard-root .col {
   flex-basis: 33%;
 }
-.dashboard .col h5 {
+
+.dashboard-root .col h5 {
   font-size: 1.8rem;
   color: rgb(71, 71, 71);
   font-weight: 300;
 }
-.dashboard .col h5 span {
+
+.dashboard-root .col h5 span {
   font-weight: 300;
   font-size: 0.9rem;
 }
-.dashboard .col p {
+
+.dashboard-root .col p {
   font-size: 0.8rem;
   color: rgb(153, 153, 153);
   font-weight: 300;
   margin-top: 2%;
 }
-.dashboard .row .col:last-child h5 {
+
+.dashboard-root .row .col:last-child h5 {
   color: rgb(72, 194, 55);
 }
 
-/* interactive */
-.dashboard .item:hover {
+/* hover interactions */
+.dashboard-root .item:hover {
   cursor: pointer;
 }
 
-/* menu / topbar / logo */
-.dashboard .menu-container {
+/* menu / topbar */
+.dashboard-root .menu-container {
   flex-basis: 68%;
   height: 100%;
   padding: 10px 20px;
@@ -244,185 +250,173 @@
   align-items: center;
   justify-content: space-between;
 }
-.dashboard .logo {
+
+.dashboard-root .logo {
   width: 30px;
   height: 20px;
 }
-.dashboard .menus {
+
+.dashboard-root .menus {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-.dashboard .menus ul {
+
+.dashboard-root .menus ul {
   list-style-type: none;
 }
-.dashboard .menus li {
+
+.dashboard-root .menus li {
   display: inline-block;
   margin-right: 30px;
-  text-decoration: none;
 }
-.dashboard .menu {
+
+.dashboard-root .menu {
   font-size: 0.8rem;
   font-weight: 400;
   color: rgb(70, 70, 70);
+  text-decoration: none;
 }
-.dashboard .menu.selected {
+
+.dashboard-root .menu.selected {
   color: rgb(245, 104, 52);
 }
-.dashboard hr {
+
+.dashboard-root hr {
   border-left: 0.8px solid rgb(243, 242, 242);
   height: 30px;
 }
 
 /* profile */
-.dashboard .profile {
+.dashboard-root .profile {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   margin-left: 20px;
 }
-.dashboard .profile .avatar {
+
+.dashboard-root .profile .avatar {
   width: 30px;
   height: 30px;
-  text-align: center;
-  position: relative;
   font-size: 0.7rem;
   font-weight: 400;
   color: rgb(221, 139, 221);
+  display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  text-align: center;
-  display: flex;
   background: rgb(252, 229, 252);
   margin-right: 8px;
 }
-.dashboard .profile .username {
+
+.dashboard-root .profile .username {
   font-size: 0.8rem;
   font-weight: 300;
 }
 
 /* orders container */
-.dashboard .orders {
+.dashboard-root .orders {
   width: 100%;
   height: 90vh;
 }
-.dashboard .no-orders {
+
+.dashboard-root .no-orders {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.dashboard .no-orders .icon {
+
+.dashboard-root .no-orders .icon {
   transform: scale(4);
   color: rgb(173, 173, 173);
   display: block;
 }
-.dashboard .no-orders p {
+
+.dashboard-root .no-orders p {
   margin-top: 6%;
   color: rgb(173, 173, 173);
   font-size: 1rem;
   font-weight: 300;
 }
-.dashboard .btn {
+
+.dashboard-root .btn {
   text-decoration: none;
   background: rgb(77, 77, 248);
   padding: 10px 20px;
   border-radius: 2px;
   color: #fff;
   margin-top: 2%;
+  display: inline-block;
 }
-.dashboard .btn:hover {
+
+.dashboard-root .btn:hover {
   background: rgb(110, 110, 253);
 }
 
-/* title repeated */
-.dashboard .title {
+/* title */
+.dashboard-root .title {
   font-size: 1.3rem;
   font-weight: 300;
   color: rgb(71, 71, 71);
   margin-bottom: 2%;
 }
 
-/* order-table variant repeated */
-.dashboard .order-table table {
+/* order table */
+.dashboard-root .order-table table {
   width: 100%;
   border-collapse: collapse;
 }
-.dashboard .order-table tr {
+
+.dashboard-root .order-table tr {
   border-top: 1px solid rgb(211, 211, 211);
   border-bottom: 1px solid rgb(211, 211, 211);
 }
-.dashboard .order-table th {
+
+.dashboard-root .order-table th {
   text-align: right;
   padding: 15px 10px;
   color: rgb(145, 145, 145);
   font-weight: 300;
   font-size: 0.8rem;
 }
-.dashboard .order-table tr td:first-child p {
-  background: rgb(255, 197, 197);
-  color: rgb(233, 120, 120);
-  width: 50%;
-  text-align: center;
-  border-radius: 2px;
-}
-.dashboard .order-table tr td:last-child {
-  font-size: 0.6rem;
-}
-.dashboard .order-table td {
+
+.dashboard-root .order-table td {
   padding: 10px 10px;
   text-align: right;
   font-weight: 400;
   font-size: 0.9rem;
   color: rgb(73, 73, 73);
 }
-.dashboard .align-left {
-  text-align: left;
+
+.dashboard-root .order-table tr td:first-child p {
+  background: rgb(255, 197, 197);
+  color: rgb(233, 120, 120);
+  width: 50%;
+  text-align: center;
+  border-radius: 2px;
 }
-.dashboard .order-table td.profit {
+
+.dashboard-root .order-table tr td:last-child {
+  font-size: 0.6rem;
+}
+
+.dashboard-root .order-table td.profit {
   color: rgb(72, 194, 55);
 }
-.dashboard .order-table td.loss {
+
+.dashboard-root .order-table td.loss {
   color: rgb(250, 118, 78);
 }
 
-/* repeated row/col */
-.dashboard .row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 5%;
-}
-.dashboard .col {
-  flex-basis: 33%;
-}
-.dashboard .col h5 {
-  font-size: 1.8rem;
-  color: rgb(71, 71, 71);
-  font-weight: 300;
-}
-.dashboard .col h5 span {
-  font-weight: 300;
-  font-size: 0.9rem;
-}
-.dashboard .col p {
-  font-size: 0.8rem;
-  color: rgb(153, 153, 153);
-  font-weight: 300;
-  margin-top: 2%;
-}
-.dashboard .row .col:last-child h5 {
-  color: rgb(72, 194, 55);
+.dashboard-root .align-left {
+  text-align: left;
 }
 
-/* item hover */
-.dashboard .item:hover {
-  cursor: pointer;
-}
+/* === Dashboard Block 3 (Scoped & Refined) === */
 
 /* username */
-.dashboard .username h6 {
+.dashboard-root .username h6 {
   font-size: 1.5rem;
   font-weight: 400;
   color: rgb(83, 83, 83);
@@ -430,92 +424,95 @@
 }
 
 /* divider */
-.dashboard .divider {
+.dashboard-root .divider {
   border: none;
   background: #d1d1d1;
   height: 1px;
-  margin: 20px 0;
-  margin-bottom: 5%;
+  margin: 20px 0 5%;
 }
 
 /* sections */
-.dashboard .section {
+.dashboard-root .section {
   padding-bottom: 2%;
 }
-.dashboard .section span {
+
+.dashboard-root .section span {
   display: flex;
   align-items: center;
   margin-bottom: 2%;
 }
-.dashboard .section span p {
-  display: inline-block;
+
+.dashboard-root .section span p {
   font-size: 1.2rem;
   font-weight: 300;
 }
-.dashboard .section-icon {
+
+.dashboard-root .section-icon {
   transform: scale(0.8);
   color: rgb(112, 112, 112);
-  padding: 0;
-  margin: 0;
   margin-right: 10px;
 }
 
+.dashboard-root .section hr {
+  margin-top: 6%;
+}
+
 /* data block */
-.dashboard .data {
+.dashboard-root .data {
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-.dashboard .data .first h3 {
+
+.dashboard-root .data .first h3 {
   font-size: 2.5rem;
   font-weight: 300;
   color: rgb(71, 71, 71);
 }
-.dashboard .data .first p {
+
+.dashboard-root .data .first p {
   font-size: 0.8rem;
   color: rgb(136, 136, 136);
 }
-.dashboard .data .first small {
+
+.dashboard-root .data .first small,
+.dashboard-root .data .first .profit {
   font-size: 0.8rem;
   color: rgb(72, 194, 55);
 }
-.dashboard .data .first .profit {
-  color: rgb(72, 194, 55);
-}
-.dashboard .data hr {
+
+.dashboard-root .data hr {
   border-left: 0.6px solid rgb(243, 242, 242);
   height: 70px;
 }
-.dashboard .data .second p {
+
+.dashboard-root .data .second p {
   font-size: 0.8rem;
   color: rgb(136, 136, 136);
   margin-bottom: 10px;
   white-space: nowrap;
 }
-.dashboard .data .second p span {
-  display: inline;
+
+.dashboard-root .data .second p span {
   margin-left: 5%;
   font-size: 0.9rem;
   color: rgb(100, 100, 100);
 }
-.dashboard .section hr {
-  margin-top: 6%;
-}
 
 /* topbar */
-.dashboard .topbar-container {
+.dashboard-root .topbar-container {
   width: 100%;
   height: 10vh;
   display: flex;
   align-items: center;
-  box-shadow: 0px 0px 4px 2px rgb(236, 235, 235);
+  box-shadow: 0 0 4px 2px rgb(236, 235, 235);
   box-sizing: border-box;
   z-index: 9;
 }
 
 /* indices container */
-.dashboard .indices-container {
+.dashboard-root .indices-container {
   flex-basis: 32%;
   height: 100%;
   padding: 10px 20px;
@@ -525,62 +522,60 @@
   align-items: center;
   justify-content: space-around;
 }
-.dashboard .nifty {
-  flex-basis: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  z-index: -2;
-}
-.dashboard .sensex {
+
+.dashboard-root .nifty,
+.dashboard-root .sensex {
   flex-basis: 40%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-.dashboard .nifty > *,
-.dashboard .sensex > * {
+
+.dashboard-root .nifty > *,
+.dashboard-root .sensex > * {
   margin-right: 8px;
 }
-.dashboard .index {
+
+.dashboard-root .index {
   font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
   color: rgb(97, 97, 97);
   white-space: nowrap;
+  cursor: pointer;
 }
-.dashboard .index-points {
+
+.dashboard-root .index-points {
   font-size: 0.8rem;
   font-weight: 500;
   color: rgb(223, 73, 73);
 }
-.dashboard .percent {
+
+.dashboard-root .percent {
   font-size: 0.8rem;
   font-weight: 400;
   color: rgb(146, 146, 146);
 }
-.dashboard .index:hover {
-  cursor: pointer;
-}
 
 /* watchlist */
-.dashboard .watchlist-container {
+.dashboard-root .watchlist-container {
   flex-basis: 32%;
   height: 100%;
   box-sizing: border-box;
-  box-shadow: 0px 0px 4px 1px rgb(236, 235, 235);
+  box-shadow: 0 0 4px 1px rgb(236, 235, 235);
   overflow-y: auto;
   position: relative;
 }
-.dashboard .search-container {
+
+.dashboard-root .search-container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   position: relative;
 }
-.dashboard .search {
+
+.dashboard-root .search {
   width: 100%;
-  height: 6%;
   border: none;
   padding: 15px 20px;
   font-size: 0.9rem;
@@ -588,50 +583,60 @@
   color: rgb(241, 241, 241);
   border-bottom: 0.8px solid rgb(235, 234, 234);
 }
-.dashboard .counts {
+
+.dashboard-root .counts {
   position: absolute;
   right: 20px;
   font-size: 0.9rem;
   font-weight: 400;
   color: rgb(177, 177, 177);
 }
-.dashboard .list {
+
+.dashboard-root .list {
   list-style-type: none;
 }
-.dashboard .list li {
+
+.dashboard-root .list li {
   border-bottom: 0.8px solid rgb(235, 234, 234);
   position: relative;
 }
-.dashboard .item {
+
+.dashboard-root .item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-weight: 300;
   position: relative;
 }
-.dashboard .item-info {
+
+.dashboard-root .item-info {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
 }
-.dashboard .item-info > * {
+
+.dashboard-root .item-info > * {
   margin-right: 8px;
 }
-.dashboard .item-info span:nth-child(1) {
+
+.dashboard-root .item-info span:nth-child(1) {
   color: rgb(141, 141, 141);
   flex: 1;
 }
-.dashboard .item-info span:nth-child(2) {
+
+.dashboard-root .item-info span:nth-child(2) {
   color: rgb(223, 73, 73);
   margin-right: 12px;
   flex: 2;
 }
-.dashboard .item-info span:nth-child(3) {
+
+.dashboard-root .item-info span:nth-child(3) {
   color: rgb(223, 73, 73);
   flex: 1;
 }
 
-/* actions */
+/* ==================== Block 4: Dashboard Actions & Utilities ==================== */
+
 .dashboard .actions {
   position: absolute;
   top: 0;
@@ -642,6 +647,7 @@
   justify-content: flex-end;
   display: none;
 }
+
 .dashboard .actions span button {
   width: 40px;
   height: 30px;
@@ -650,6 +656,7 @@
   margin-right: 8px;
   cursor: pointer;
 }
+
 .dashboard .buy {
   background-color: #4184f3;
   color: #fff;
@@ -657,6 +664,7 @@
   font-size: 0.8rem;
   border: 0.7px solid #4184f3;
 }
+
 .dashboard .sell {
   background-color: #ff5722;
   color: #fff;
@@ -664,16 +672,17 @@
   font-size: 0.8rem;
   border: 0.7px solid #ff5722;
 }
+
 .dashboard .action {
   background-color: #fff;
   border: 0.7px solid #9b9b9b;
 }
+
 .dashboard .icon {
   transform: scale(0.7);
   color: rgb(65, 65, 65);
 }
 
-/* watchlist-number */
 .dashboard .watchlist-number {
   height: 6%;
   width: 32%;
@@ -689,38 +698,48 @@
   z-index: 5;
   background: #fff;
 }
+
 .dashboard .watchlist-number ul {
   list-style-type: none;
 }
+
 .dashboard .watchlist-number ul li {
   display: inline-block;
   padding: 10px 20px;
   border-right: 1px solid rgb(231, 231, 231);
 }
+
 .dashboard .watchlist-number ul li:nth-child(1) {
   color: rgb(223, 73, 73);
 }
+
 .dashboard .down {
   color: rgb(223, 73, 73);
 }
+
 .dashboard .up {
   color: rgb(103, 201, 136);
 }
+
 .dashboard .settings {
   transform: scale(0.8);
   color: rgb(105, 105, 105);
 }
+
 .dashboard .search:focus {
   outline: none;
 }
+
 .dashboard .list li:hover {
   cursor: move;
   background-color: #f3f3f3;
 }
+
 .dashboard .list li:hover > .actions {
   display: flex;
   cursor: move;
 }
+
 .dashboard .list li::before {
   content: "";
   background: transparent;
@@ -730,32 +749,37 @@
   top: 0;
   left: 0;
 }
+
 .dashboard .watchlist-number ul li:hover {
   color: rgb(245, 104, 52);
   cursor: pointer;
   background: rgb(243, 243, 243);
 }
+
 .dashboard .settings:hover {
   cursor: pointer;
 }
+
 .dashboard .action:hover {
   background-color: rgb(212, 212, 212);
 }
 
-/* small utilities */
 .dashboard .section {
   padding-bottom: 2%;
 }
+
 .dashboard .section span {
   display: flex;
   align-items: center;
   margin-bottom: 2%;
 }
+
 .dashboard .section span p {
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 300;
 }
+
 .dashboard .section-icon {
   transform: scale(0.8);
   color: rgb(112, 112, 112);
@@ -764,7 +788,6 @@
   margin-right: 10px;
 }
 
-/* search styles */
 .dashboard .search {
   width: 100%;
   height: 6%;
@@ -776,19 +799,19 @@
   border-bottom: 0.8px solid rgb(235, 234, 234);
 }
 
-/* hover states */
 .dashboard .menu:hover {
   color: rgb(245, 104, 52);
 }
+
 .dashboard .profile:hover {
   cursor: pointer;
 }
+
 .dashboard .profile:hover .username {
   cursor: pointer;
   color: rgb(223, 91, 43);
 }
 
-/* small spacing helpers */
 .dashboard .divider {
   border: none;
   background: #d1d1d1;
@@ -797,7 +820,6 @@
   margin-bottom: 5%;
 }
 
-/* final utilities */
 .dashboard .username h6 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -805,28 +827,7 @@
   margin-bottom: 20px;
 }
 
-/* ensure buttons inside dashboard have priority */
 .dashboard .btn {
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-}
-
-/* responsive helpers (you can expand later) */
-@media (max-width: 900px) {
-  .dashboard .dashboard-container {
-    flex-direction: column;
-    height: auto;
-  }
-  .dashboard .menu-container,
-  .dashboard .watchlist-container,
-  .dashboard .content {
-    flex-basis: 100%;
-    width: 100%;
-  }
-  .dashboard .watchlist-number {
-    position: static;
-    width: 100%;
-    display: block;
-  }
 }
