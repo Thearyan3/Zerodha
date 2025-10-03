@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { FaUserCircle } from "react-icons/fa";
 import "./Signup.css";
+import { baseURL } from "../api";
 
 const Signup = () => {
   const [inputValue, setInputValue] = useState({
@@ -41,7 +42,7 @@ const Signup = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/api/auth/signup",
+        `${baseURL}/auth/signup`,
         { email, username, password },
         { withCredentials: true }
       );
