@@ -830,4 +830,6 @@
 .dashboard-root .btn {
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;  /* Standard property last */
 }
+
