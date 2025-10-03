@@ -637,7 +637,7 @@
 
 /* ==================== Block 4: Dashboard Actions & Utilities ==================== */
 
-.dashboard .actions {
+.dashboard-root .actions {
   position: absolute;
   top: 0;
   left: 0;
@@ -648,7 +648,7 @@
   display: none;
 }
 
-.dashboard .actions span button {
+.dashboard-root .actions span button {
   width: 40px;
   height: 30px;
   border-radius: 4px;
@@ -657,7 +657,7 @@
   cursor: pointer;
 }
 
-.dashboard .buy {
+.dashboard-root .buy {
   background-color: #4184f3;
   color: #fff;
   font-weight: 400;
@@ -665,7 +665,7 @@
   border: 0.7px solid #4184f3;
 }
 
-.dashboard .sell {
+.dashboard-root .sell {
   background-color: #ff5722;
   color: #fff;
   font-weight: 400;
@@ -673,17 +673,17 @@
   border: 0.7px solid #ff5722;
 }
 
-.dashboard .action {
+.dashboard-root .action {
   background-color: #fff;
   border: 0.7px solid #9b9b9b;
 }
 
-.dashboard .icon {
+.dashboard-root .icon {
   transform: scale(0.7);
   color: rgb(65, 65, 65);
 }
 
-.dashboard .watchlist-number {
+.dashboard-root .watchlist-number {
   height: 6%;
   width: 32%;
   box-sizing: border-box;
@@ -699,48 +699,48 @@
   background: #fff;
 }
 
-.dashboard .watchlist-number ul {
+.dashboard-root .watchlist-number ul {
   list-style-type: none;
 }
 
-.dashboard .watchlist-number ul li {
+.dashboard-root .watchlist-number ul li {
   display: inline-block;
   padding: 10px 20px;
   border-right: 1px solid rgb(231, 231, 231);
 }
 
-.dashboard .watchlist-number ul li:nth-child(1) {
+.dashboard-root .watchlist-number ul li:nth-child(1) {
   color: rgb(223, 73, 73);
 }
 
-.dashboard .down {
+.dashboard-root .down {
   color: rgb(223, 73, 73);
 }
 
-.dashboard .up {
+.dashboard-root .up {
   color: rgb(103, 201, 136);
 }
 
-.dashboard .settings {
+.dashboard-root .settings {
   transform: scale(0.8);
   color: rgb(105, 105, 105);
 }
 
-.dashboard .search:focus {
+.dashboard-root .search:focus {
   outline: none;
 }
 
-.dashboard .list li:hover {
+.dashboard-root .list li:hover {
   cursor: move;
   background-color: #f3f3f3;
 }
 
-.dashboard .list li:hover > .actions {
+.dashboard-root .list li:hover > .actions {
   display: flex;
   cursor: move;
 }
 
-.dashboard .list li::before {
+.dashboard-root .list li::before {
   content: "";
   background: transparent;
   width: 100%;
@@ -750,37 +750,37 @@
   left: 0;
 }
 
-.dashboard .watchlist-number ul li:hover {
+.dashboard-root .watchlist-number ul li:hover {
   color: rgb(245, 104, 52);
   cursor: pointer;
   background: rgb(243, 243, 243);
 }
 
-.dashboard .settings:hover {
+.dashboard-root .settings:hover {
   cursor: pointer;
 }
 
-.dashboard .action:hover {
+.dashboard-root .action:hover {
   background-color: rgb(212, 212, 212);
 }
 
-.dashboard .section {
+.dashboard-root .section {
   padding-bottom: 2%;
 }
 
-.dashboard .section span {
+.dashboard-root .section span {
   display: flex;
   align-items: center;
   margin-bottom: 2%;
 }
 
-.dashboard .section span p {
+.dashboard-root .section span p {
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 300;
 }
 
-.dashboard .section-icon {
+.dashboard-root .section-icon {
   transform: scale(0.8);
   color: rgb(112, 112, 112);
   padding: 0;
@@ -788,7 +788,7 @@
   margin-right: 10px;
 }
 
-.dashboard .search {
+.dashboard-root .search {
   width: 100%;
   height: 6%;
   border: none;
@@ -799,20 +799,20 @@
   border-bottom: 0.8px solid rgb(235, 234, 234);
 }
 
-.dashboard .menu:hover {
+.dashboard-root .menu:hover {
   color: rgb(245, 104, 52);
 }
 
-.dashboard .profile:hover {
+.dashboard-root .profile:hover {
   cursor: pointer;
 }
 
-.dashboard .profile:hover .username {
+.dashboard-root .profile:hover .username {
   cursor: pointer;
   color: rgb(223, 91, 43);
 }
 
-.dashboard .divider {
+.dashboard-root .divider {
   border: none;
   background: #d1d1d1;
   height: 1px;
@@ -820,14 +820,14 @@
   margin-bottom: 5%;
 }
 
-.dashboard .username h6 {
+.dashboard-root .username h6 {
   font-size: 1.5rem;
   font-weight: 400;
   color: rgb(83, 83, 83);
   margin-bottom: 20px;
 }
 
-.dashboard .btn {
+.dashboard-root .btn {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
