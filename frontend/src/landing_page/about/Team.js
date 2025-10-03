@@ -25,8 +25,8 @@ function Team() {
         </div>
         <div className="col-6 pt-4" style={{fontSize: "1.1em", lineHeight: "1.5"}}>
           <p>
-            As a Web Developer, Aryan is passionate about building full-stack applications<br /> that solve real-world problems. Currently studying BCA, he specializes in<br />
-            the MERN stack and has built several notable projects, including a Zerodha <br />
+            As a Web Developer, Aryan is passionate about building full-stack<br /> applications that solve real-world problems. Currently studying BCA,<br /> he specializes in
+            the MERN stack and has built several notable projects, <br />including a Zerodha 
             clone and a Wanderlust property platform.
           </p>
 
