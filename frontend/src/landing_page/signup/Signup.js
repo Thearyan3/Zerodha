@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { FaUserCircle } from "react-icons/fa";
 import "./Signup.css";
-import { baseURL } from "../api";
+import { baseURL } from "../../api";
 
 const Signup = () => {
   const [inputValue, setInputValue] = useState({
