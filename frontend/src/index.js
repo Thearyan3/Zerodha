@@ -15,8 +15,6 @@ import NotFound from "./landing_page/NotFound";
 import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 
-import Home from "./dashboard/components/Home";
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -41,9 +39,6 @@ root.render(
             </>
           }
         />
-
-        {/* Dashboard routes */}
-      <Route path="/dashboard/*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
