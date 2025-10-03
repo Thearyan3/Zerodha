@@ -25,9 +25,9 @@ app.use(cookieParser());
 // ✅ Proper CORS setup
 const corsOptions = {
   origin: [
-    "http://localhost:3001", // frontend
-    "http://localhost:3000", // dashboard
-  ],
+  "https://zerodha-frontend-dm96.onrender.com",
+  "https://zerodha-dashboard-p6op.onrender.com"
+],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,

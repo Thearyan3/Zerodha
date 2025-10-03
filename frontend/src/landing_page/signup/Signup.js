@@ -54,7 +54,7 @@ const Signup = () => {
         handleSuccess(message);
         console.log("✅ Redirecting to dashboard...");
         setTimeout(() => {
-          window.location.href = "http://localhost:3000"; // dashboard
+          window.location.href = "https://zerodha-dashboard-p6op.onrender.com"; // dashboard
         }, 1000);
       } else {
         handleError(message);
