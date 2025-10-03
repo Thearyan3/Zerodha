@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { baseURL } from "../api";
 
 import Apps from "./Apps";
 import Funds from "./Funds";
@@ -30,7 +31,7 @@ useEffect(() => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/api/auth/verify", { withCredentials: true })
+      .get(`http://${baseURL}/auth/verify`, { withCredentials: true })
       .then((res) => {
         // assuming your backend sends { status: true, user: username } when valid
         if (res.data.status) {
