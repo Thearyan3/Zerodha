@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav
-      class="navbar navbar-expand-lg border-bottom"
+      class="navbar navbar-expand-lg border-bottom sticky-top"
       style={{ backgroundColor: "#FFF" }}
     >
       <div class="container p-3">
