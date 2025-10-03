@@ -31,7 +31,7 @@ useEffect(() => {
 
   useEffect(() => {
     axios
-      .get(`http://${baseURL}/auth/verify`, { withCredentials: true })
+      .get(`${baseURL}/auth/verify`, { withCredentials: true })
       .then((res) => {
         // assuming your backend sends { status: true, user: username } when valid
         if (res.data.status) {
