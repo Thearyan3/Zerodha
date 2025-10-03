@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { FaUserCircle } from "react-icons/fa";
 import "./Signup.css";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+const navigate = useNavigate();
+
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -53,7 +56,7 @@ const Signup = () => {
         handleSuccess(message);
         console.log("✅ Redirecting to dashboard...");
         setTimeout(() => {
-          window.location.href = "http://localhost:3000"; // dashboard
+           navigate("/dashboard"); // dashboard
         }, 1000);
       } else {
         handleError(message);
